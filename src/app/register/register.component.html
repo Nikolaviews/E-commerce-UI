@@ -1,0 +1,52 @@
+<div class="container register">
+    <div class="row">
+      <div class="col-md-3 register-left">
+        <h3>Welcome</h3>
+        <p>Get into fashion and lifestyle</p>
+        <br>
+        <p>Already a customer</p>
+        <input type="submit" (click)="navigateToLogin()" name="" value="Login"/><br/>
+      </div>
+      <div class="col-md-9 register-right">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h3 class="register-heading">Apply as a new User</h3>
+            <div class="row register-form">
+                <div class="col-md-6">
+                    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+                      <ng-container *ngFor="let field of getFormControlKeys(); let i = index">
+                        <div *ngIf="i < getFormControlKeys().length / 2">
+                          <mat-form-field appearance="outline">
+                            <mat-label>{{ field | titlecase }}</mat-label>
+                            <input matInput [type]="field.includes('password') ? 'password' : 'text'" [placeholder]="field | titlecase" [formControlName]="field">
+                          </mat-form-field>
+                        </div>
+                      </ng-container>
+                    </form>
+                  </div>
+                  <div class="col-md-6">
+                    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+                      <ng-container *ngFor="let field of getFormControlKeys(); let i = index">
+                        <div *ngIf="i >= getFormControlKeys().length / 2">
+                          <mat-form-field appearance="outline">
+                            <mat-label>{{ field | titlecase }}</mat-label>
+                            <input matInput [type]="field.includes('password') ? 'password' : 'text'" [placeholder]="field | titlecase" [formControlName]="field">
+                          </mat-form-field>
+                        </div>
+                      </ng-container>
+                      <div class="form-group">
+                        <mat-radio-group formControlName="gender">
+                          <mat-radio-button *ngFor="let gender of genders" [value]="gender">{{ gender }}</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+                      <input type="submit" class="btnRegister" (click)="registerUser()" value="Register"/>
+                    </form>
+                  </div>
+                  
+              </div>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

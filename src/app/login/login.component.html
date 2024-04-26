@@ -1,0 +1,40 @@
+<div class="container login">
+    <div class="row">
+        <div class="col-md-3 login-left">
+            <h3>Are you a new user, please register first</h3>
+            <button type="button" class="btn btn-primary" (click)="navigateToRegister()">Register</button><br/>
+        </div>
+        <div class="col-md-9 login-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="login-heading">Login...</h3>
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="row login-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput type="email" placeholder="Email *" formControlName="email">
+                                    </mat-form-field>
+                                    <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                                        Please enter a valid email
+                                    </mat-error>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Password</mat-label>
+                                        <input matInput type="password" placeholder="Password *" formControlName="password">
+                                    </mat-form-field>
+                                    <p><a href="#" class="link-secondary">Forget password?</a></p>
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

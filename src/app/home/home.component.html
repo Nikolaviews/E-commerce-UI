@@ -1,0 +1,89 @@
+<div class="home-container">
+    <!-- Header Section -->
+    <app-nav></app-nav>
+    <!-- Carousel Section -->
+    <div class="carousel-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/slide-1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/slide-2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/slide-3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <section class="product-highlights">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <header class="heading-section d-flex justify-content-center align-items-center bg-light p-3 rounded">
+                <h2 class="title primary-text m-0">Most Popular</h2>
+              </header>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3" *ngFor="let product of randomProducts">
+              <article class="product-item border rounded p-3 h-100 d-flex flex-column justify-content-between">
+                <img loading="lazy" [src]="product.imageUrl" alt="{{product.name}}" class="image img-fluid">
+                <div class="product-details mt-2 text-center">
+                  <div class="product-name">{{product.name}}</div>
+                  <div class="product-description">{{product.description}}</div>
+                  <div class="price">Price: ₹{{product.price}}</div>
+                  <div class="rating">Rating: {{product.rating}}</div>
+                </div>
+                <div class="view-product-btn mt-2 d-flex justify-content-center">
+                  <button (click)="addToCart(product)" class="shop-now btn btn-primary">Shop Now</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product-highlights">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <header class="heading-section d-flex justify-content-center align-items-center bg-light p-3 rounded">
+                <h2 class="title primary-text m-0">Most Popular</h2>
+              </header>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3" *ngFor="let product of randomProducts2">
+              <article class="product-item border rounded p-3 h-100 d-flex flex-column justify-content-between">
+                <img loading="lazy" [src]="product.imageUrl" alt="{{product.name}}" class="image img-fluid">
+                <div class="product-details mt-2 text-center">
+                  <div class="product-name">{{product.name}}</div>
+                  <div class="product-description">{{product.description}}</div>
+                  <div class="price">Price: ₹{{product.price}}</div>
+                  <div class="rating">Rating: {{product.rating}}</div>
+                </div>
+                <div class="view-product-btn mt-2 d-flex justify-content-center">
+                  <button (click)="addToCart(product)" class="shop-now btn btn-primary">Shop Now</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+                   
+</div>
