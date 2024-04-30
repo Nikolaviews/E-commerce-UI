@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<!-- <app-nav></app-nav> -->
 <div class="container">
   <div class="row">
     <div class="col-md-6" *ngFor="let product of products">
@@ -9,9 +9,9 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-title"><strong>{{ product.name }}</strong></p>
               <p class="card-text">{{ product.description }}</p>
-              <p class="card-text"><strong>Price: ₹{{ product.price }}</strong></p>
+              <p class="card-text">Price: ₹{{ product.price }}</p>
               <button class="btn btn-primary" (click)="productDetails(product)">View Product</button>
             </div>
           </div>
@@ -20,3 +20,4 @@
     </div>
   </div>
 </div>
+

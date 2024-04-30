@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  filteredProducts: Product[] = [];
 
   constructor(
     private productService: ProductService,
@@ -42,6 +43,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe(
       (data: Product[]) => {
         this.products = data;
+        this.filteredProducts = [...this.products];
       },
       error => {
         console.log('Error fetching products:', error);
@@ -59,6 +61,15 @@ export class ProductListComponent implements OnInit {
       }
     );
   }  
+
+  applyFilters(filters: any): void {
+    this.filteredProducts = this.products.filter(product => product.name.includes(filters.searchName));
+
+    if (filters.selectedProduct) {
+      this.filteredProducts = this.filteredProducts.filter(product => product.name === filters.selectedProduct);
+    }
+    this.filteredProducts = this.filteredProducts.filter(product => product.price <= filters.priceRange);
+  }
 
   addToCart(product: Product): void {
     this.productService.addToCart(product).subscribe(
