@@ -12,6 +12,8 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
+  maxPrice: number = 0;
+  filterOptions: any = { searchName: '', selectedProduct: '', priceRange: 0 };
 
   constructor(
     private productService: ProductService,
@@ -23,7 +25,7 @@ export class ProductListComponent implements OnInit {
   }
 
   productDetails(product: Product): void {
-    if (product && product.id) { // Check if the product ID is valid
+    if (product && product.id) { 
       this.productService.getProductById(product.id).subscribe(
         (data: Product) => {
           this.bottomSheet.open(ProductDetailsComponent, {
@@ -44,11 +46,29 @@ export class ProductListComponent implements OnInit {
       (data: Product[]) => {
         this.products = data;
         this.filteredProducts = [...this.products];
+        this.maxPrice = Math.max(...this.products.map(product => product.price));
       },
       error => {
         console.log('Error fetching products:', error);
       }
     );
+  }
+
+  applyFilters(): void {
+    let filteredList = [...this.products];
+    if (this.filterOptions.searchName) {
+      filteredList = filteredList.filter(product => product.name.toLowerCase().includes(this.filterOptions.searchName.toLowerCase()));
+    }
+    if (this.filterOptions.selectedProduct) {
+      filteredList = filteredList.filter(product => product.name === this.filterOptions.selectedProduct);
+    }
+    // if (this.filterOptions.selectedProduct) {
+    //   filteredList = filteredList.filter(product => product.description === this.filterOptions.selectedProduct);
+    // }
+    if (this.filterOptions.priceRange > 0) {
+      filteredList = filteredList.filter(product => product.price <= this.filterOptions.priceRange);
+    }
+    this.filteredProducts = filteredList;
   }
 
   loadProduct(productId: number): void {
@@ -61,15 +81,6 @@ export class ProductListComponent implements OnInit {
       }
     );
   }  
-
-  applyFilters(filters: any): void {
-    this.filteredProducts = this.products.filter(product => product.name.includes(filters.searchName));
-
-    if (filters.selectedProduct) {
-      this.filteredProducts = this.filteredProducts.filter(product => product.name === filters.selectedProduct);
-    }
-    this.filteredProducts = this.filteredProducts.filter(product => product.price <= filters.priceRange);
-  }
 
   addToCart(product: Product): void {
     this.productService.addToCart(product).subscribe(

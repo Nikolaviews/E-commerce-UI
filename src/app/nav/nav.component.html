@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-md-3 sign-in">
               <a href="#" class="text-white action-link" routerLink="/register">
-                <mat-icon>person</mat-icon>
+                <mat-icon>login</mat-icon>
               </a>
             </div>
             <div class="col-md-3 orders">
@@ -41,16 +41,16 @@
   <mat-drawer #drawer opened="false" mode="side" position="end">
   <mat-nav-list>
       <mat-list-item>
-          <button routerLink="card" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+          <button routerLink="/dash" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
       </mat-list-item>
       <mat-list-item>
-          <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
+          <button routerLink="/home" mat-button><mat-icon>home</mat-icon> Home</button>
       </mat-list-item>
       <mat-list-item>
-          <button routerLink="slider" mat-button><mat-icon>explore</mat-icon> Slider</button>
+          <button routerLink="/slider" mat-button><mat-icon>explore</mat-icon> Slider</button>
       </mat-list-item>
       <mat-list-item>
-          <button routerLink="table" mat-button><mat-icon>table</mat-icon> Table</button>
+          <button routerLink="/table" mat-button><mat-icon>table</mat-icon> Table</button>
       </mat-list-item>
       <mat-list-item>
           <button mat-button><mat-icon>settings</mat-icon> Settings</button>
