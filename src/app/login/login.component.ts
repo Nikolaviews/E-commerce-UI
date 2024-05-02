@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
   openSnackBar(message: string) {
     const config = new MatSnackBarConfig();
     config.duration = 2000;
-    config.horizontalPosition = 'center';
+    config.horizontalPosition = 'right';
     config.verticalPosition = 'top';
 
     this._snackBar.open(message, 'Dismiss', config);
