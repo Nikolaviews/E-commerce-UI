@@ -24,6 +24,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatChipsModule } from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -63,6 +64,7 @@ import { NavComponent } from './nav/nav.component';
     MatSnackBarModule,
     MatSelectModule,
     MatSliderModule,
+    MatChipsModule,
     FormsModule,
     BrowserAnimationsModule
   ],

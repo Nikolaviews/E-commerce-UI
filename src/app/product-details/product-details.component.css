@@ -2,3 +2,10 @@
   min-height: 40vw ! important;
 }
  
+p {
+  font-size: larger;
+}
+
+.like {
+  align-items: end;
+}

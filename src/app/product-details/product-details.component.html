@@ -1,3 +1,22 @@
-<div class="container">
-  
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img [src]="product.imageUrl" class="card-img" [alt]="product.name">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <mat-chip style="background-color: orange;">50% Disc</mat-chip>
+        <span><mat-icon class="like">favorite</mat-icon></span>
+        <p><strong>{{ product.name }}</strong></p>
+        <p class="card-text">{{ product.description }}</p>
+        <mat-chip-set>
+          <mat-chip color="accent">Men's fashion</mat-chip>
+          <mat-chip color="warn">Perfect fit</mat-chip>
+        </mat-chip-set>
+        <p class="card-text text-secondary"><del>₹ 9999</del></p>
+        <p class="card-text">Price: ₹{{ product.price }}</p>
+        <button class="btn btn-primary">add to cart</button>
+      </div>
+    </div>
+  </div>
 </div>
