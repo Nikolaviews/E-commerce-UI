@@ -31,6 +31,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NavComponent } from './nav/nav.component';
+import { LandComponent } from './land/land.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { NavComponent } from './nav/nav.component';
     CartComponent,
     CheckoutComponent,
     NavComponent,
+    LandComponent,
   ],
   imports: [
     BrowserModule,

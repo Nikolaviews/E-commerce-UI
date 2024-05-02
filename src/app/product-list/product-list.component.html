@@ -1,24 +1,31 @@
 <div class="container">
   <!-- Filter section -->
   <div class="row mb-3">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <mat-form-field appearance="fill">
         <mat-label for="searchInput">Search by Name</mat-label>
         <input matInput id="searchInput" name="searchInput" placeholder="Search by Name" [(ngModel)]="filterOptions.searchName" (input)="applyFilters()">
       </mat-form-field>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <mat-form-field appearance="fill">
         <mat-label for="productSelect">Product Name</mat-label>
         <mat-select id="productSelect" [(value)]="filterOptions.selectedProduct" (selectionChange)="applyFilters()">
+          <!-- <mat-option value="">All</mat-option> -->
           <mat-option *ngFor="let product of products" [value]="product.name">{{ product.name }}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>    
-    <!-- <div class="col-md-4">
-      <mat-slider thumbLabel tickInterval="100" min="0" [max]="maxPrice" [(ngModel)]="filterOptions.priceRange" (input)="applyFilters()"></mat-slider>
+    <!-- <div class="col-md-3">
+      <mat-form-field appearance="fill">
+        <mat-label for="productDescription">Product Description</mat-label>
+        <mat-select id="productDescription" [(value)]="filterOptions.selectedDescription" (selectionChange)="applyFilters()">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let description of productDescriptions" [value]="description">{{ description }}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div> -->
-    <!-- <div class="col-md-4">
+    <!-- <div class="col-md-3">
       <mat-slider thumbLabel tickInterval="100" min="0" [max]="maxPrice" [(ngModel)]="filterOptions.priceRange" (input)="applyFilters()"></mat-slider>
     </div> -->
   </div>

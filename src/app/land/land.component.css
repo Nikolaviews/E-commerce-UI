@@ -1,0 +1,33 @@
+/* landing-page.component.css */
+
+.landing-page {
+    height: 100vh;
+    background-image: url('../../assets/img/bg-image.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .landing-page .btn {
+    border-radius: 25px;
+    padding: 10px 30px;
+    margin: 7px 20px;
+  }
+  
+  .landing-page h1 {
+    font-weight: 700;
+  }
+  
+  .landing-page .btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  .landing-page .btn-primary:hover {
+    background-color: #45a045;
+    border-color: #45a045;
+  }
+  

@@ -7,9 +7,11 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { LandComponent } from './land/land.component';
 
 const routes: Routes = [
-  {path:'', component:RegisterComponent},
+  {path:'', component:LandComponent},
+  {path:'land', component:LandComponent},
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
   {path:'home', component:HomeComponent},

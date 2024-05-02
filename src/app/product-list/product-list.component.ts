@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit {
   filteredProducts: Product[] = [];
   maxPrice: number = 0;
   filterOptions: any = { searchName: '', selectedProduct: '', priceRange: 0 };
+  productDescriptions: any;
 
   constructor(
     private productService: ProductService,
@@ -59,12 +60,12 @@ export class ProductListComponent implements OnInit {
     if (this.filterOptions.searchName) {
       filteredList = filteredList.filter(product => product.name.toLowerCase().includes(this.filterOptions.searchName.toLowerCase()));
     }
+    if (this.filterOptions.selectedDescription) {
+      filteredList = filteredList.filter(product => product.description === this.filterOptions.selectedDescription);
+    }
     if (this.filterOptions.selectedProduct) {
       filteredList = filteredList.filter(product => product.name === this.filterOptions.selectedProduct);
     }
-    // if (this.filterOptions.selectedProduct) {
-    //   filteredList = filteredList.filter(product => product.description === this.filterOptions.selectedProduct);
-    // }
     if (this.filterOptions.priceRange > 0) {
       filteredList = filteredList.filter(product => product.price <= this.filterOptions.priceRange);
     }
