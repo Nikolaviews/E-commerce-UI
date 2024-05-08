@@ -29,6 +29,22 @@
         </div>
     </div>
 
+    <!-- displaying echart -->
+    <div id="chart1" echarts [options]="option1" class="demo-chart my-2" style="width: auto; height: 500px;"></div>
+    <span><hr></span>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="chart2" echarts [options]="option2" class="demo-chart my-2"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="chart3" echarts [options]="option3" class="demo-chart my-2"></div>
+      </div>
+    </div>
+    <hr>
+    <div id="chart4" echarts [options]="option4" class="demo-chart my-2" style="width: auto; height: 500px;"></div>
+    <hr>
+
+    <!-- product-highlights -->
     <section class="product-highlights">
         <div class="container">
           <div class="row">
@@ -82,6 +98,5 @@
             </div>
           </div>
         </div>
-      </section>
-                   
+      </section>             
 </div>

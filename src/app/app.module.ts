@@ -33,6 +33,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { NavComponent } from './nav/nav.component';
 import { LandComponent } from './land/land.component';
 
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { LandComponent } from './land/land.component';
     CheckoutComponent,
     NavComponent,
     LandComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,11 @@ import { LandComponent } from './land/land.component';
     MatSliderModule,
     MatChipsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [
     MatBottomSheet,
