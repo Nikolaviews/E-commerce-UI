@@ -25,6 +25,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -35,6 +39,7 @@ import { LandComponent } from './land/land.component';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 import { FooterComponent } from './footer/footer.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ import { FooterComponent } from './footer/footer.component';
     NavComponent,
     LandComponent,
     FooterComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,9 +77,14 @@ import { FooterComponent } from './footer/footer.component';
     MatSelectModule,
     MatSliderModule,
     MatChipsModule,
+    MatButtonToggleModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+
     FormsModule,
     BrowserAnimationsModule,
-
+  
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LandComponent } from './land/land.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
   {path:'', component:LandComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'product-details', component:ProductDetailsComponent},
   {path:'cart', component:CartComponent},
   {path:'check-out', component:CheckoutComponent},
+  {path:'chart', component:ChartComponent},
 ];
 
 @NgModule({
