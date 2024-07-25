@@ -29,6 +29,15 @@ import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NavComponent } from './nav/nav.component';
+<<<<<<< Updated upstream
+=======
+import { LandComponent } from './land/land.component';
+
+import { NgxEchartsModule } from 'ngx-echarts';
+import { FooterComponent } from './footer/footer.component';
+import { ChartComponent } from './chart/chart.component';
+import { TestefComponent } from './testef/testef.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -41,6 +50,13 @@ import { NavComponent } from './nav/nav.component';
     CartComponent,
     CheckoutComponent,
     NavComponent,
+<<<<<<< Updated upstream
+=======
+    LandComponent,
+    FooterComponent,
+    ChartComponent,
+    TestefComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
